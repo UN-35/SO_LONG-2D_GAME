@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 02:19:47 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/05/22 23:30:41 by yoelansa         ###   ########.fr       */
+/*   Created: 2023/05/21 13:32:35 by yoelansa          #+#    #+#             */
+/*   Updated: 2023/05/21 13:33:06 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+void    ft_swap(char *a, char *b)
 {
-	int		i;
-	int		j;
-	char	*str;
+	char tmp;
 
-	if (!s1)
-	{
-		str = malloc(2);
-		str[0] = s2[0];
-		str[1] = '\0';
-		return (str);
-	}
-	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!str)
-		return (0);
-	i = 0;
-	j = 0;
-	while (s1[i])
-		str[j++] = s1[i++];
-	i = 0;
-	while (s2[i])
-		str[j++] = s2[i++];
-	str[j] = '\0';
-	free(s1);
-	return (str);
+	tmp = *b;
+	*b = *a;
+	*a = tmp;
 }

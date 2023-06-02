@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 02:19:47 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/05/22 23:30:41 by yoelansa         ###   ########.fr       */
+/*   Created: 2023/05/19 21:52:01 by yoelansa          #+#    #+#             */
+/*   Updated: 2023/05/19 22:51:59 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strdup(char *src)
 {
 	int		i;
-	int		j;
-	char	*str;
+	char	*dest;
 
-	if (!s1)
-	{
-		str = malloc(2);
-		str[0] = s2[0];
-		str[1] = '\0';
-		return (str);
-	}
-	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!str)
+	dest = malloc(ft_strlen(src) + 1);
+	if (!dest)
 		return (0);
 	i = 0;
-	j = 0;
-	while (s1[i])
-		str[j++] = s1[i++];
-	i = 0;
-	while (s2[i])
-		str[j++] = s2[i++];
-	str[j] = '\0';
-	free(s1);
-	return (str);
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
