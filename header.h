@@ -6,13 +6,12 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 06:27:05 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/05/30 13:36:36 by yoelansa         ###   ########.fr       */
+/*   Updated: 2023/06/07 22:38:37 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADER_H
 # define HEADER_H
-
 
 # include <fcntl.h>
 # include <unistd.h>
@@ -36,8 +35,8 @@ typedef struct s_keys
 
 typedef struct e_c
 {
-	int e;
-	int c;
+	int	e;
+	int	c;
 }	t_ec;
 
 typedef struct mlx
@@ -52,6 +51,7 @@ typedef struct mlx
 	void	*player;
 	void	*coins;
 	t_ec	*ec;
+	int		count;
 }	t_mlx;
 
 //libft
@@ -62,14 +62,26 @@ char	**ft_split(char *s, char c);
 char	*ft_strdup(char *src);
 void	ft_swap(char *a, char *b);
 char	*ft_itoa(int n);
-//
+void	ft_putstr(char *s);
+//move_player
 void	update_player(t_mlx *args);
-int 	*find_p(char **map);
-void	move_up(t_mlx *args, int dir);
 //checks
 void	check_name(char *str);
 void	check_chars(char *s, t_ec *ec);
-void	check_walls(char **map);
+void	check_walls(char **map, int i, int y);
 void	check_path(char **map, int j, int i, t_ec *ec);
+//move_utils
+int		key_press(int keycode, void *args);
+int		key_release(int keycode, void *args);
+void	get_image(t_mlx *args);
+int		display(void *data);
+//utils
+char	*read_(int fd);
+int		tab_size(char **map);
+int		_close(void *args);
+char	**array_dup(char **map);
+void	_exit(int i);
+//so_long
+int		*find_p(char **map);
 
 #endif

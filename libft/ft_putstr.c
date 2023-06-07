@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 13:32:35 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/06/07 00:35:25 by yoelansa         ###   ########.fr       */
+/*   Created: 2023/06/07 00:08:10 by yoelansa          #+#    #+#             */
+/*   Updated: 2023/06/07 00:34:53 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	ft_swap(char *a, char *b)
+void	ft_putstr(char *s)
 {
-	char	tmp;
+	int	i;
 
-	tmp = *b;
-	*b = *a;
-	*a = tmp;
+	i = 0;
+	while (s[i])
+		write(1, &s[i++], 1);
 }
