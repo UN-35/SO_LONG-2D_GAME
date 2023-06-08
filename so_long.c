@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 06:20:03 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/06/07 00:06:54 by yoelansa         ###   ########.fr       */
+/*   Updated: 2023/06/08 00:41:57 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,13 @@ void	_mlx(t_mlx	vars, t_ec *ec1)
 {
 	vars.mlx = mlx_init();
 	vars.wind = mlx_new_window(vars.mlx, 50 * ft_strlen(vars.map[0]),
-			50 * tab_size(vars.map), "NIGGA I'M SONIC!");
+			50 * tab_size(vars.map), "IM SONIC MAN!!");
 	mlx_hook(vars.wind, 17, 0, _close, &vars);
 	vars.keys.up = 0;
 	vars.keys.down = 0;
 	vars.keys.left = 0;
 	vars.keys.right = 0;
+	vars.count = 1;
 	vars.ec = ec1;
 	mlx_loop_hook(vars.mlx, display, &vars);
 	mlx_hook(vars.wind, 2, 0, key_press, &vars);

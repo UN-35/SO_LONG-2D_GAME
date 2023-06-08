@@ -6,7 +6,7 @@
 /*   By: yoelansa <yoelansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 15:19:11 by yoelansa          #+#    #+#             */
-/*   Updated: 2023/06/07 00:36:20 by yoelansa         ###   ########.fr       */
+/*   Updated: 2023/06/08 00:54:02 by yoelansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ int	display(void *data)
 	t_mlx	*args;
 	int		i;
 	int		j;
+	char	*str;
 
 	args = (t_mlx *)data;
 	get_image(args);
@@ -103,5 +104,8 @@ int	display(void *data)
 		}
 		i++;
 	}
+	str = ft_itoa(args->count - 1);
+	mlx_string_put(args->mlx, args->wind, 15, 15, 0, str);
+	free(str);
 	return (0);
 }
