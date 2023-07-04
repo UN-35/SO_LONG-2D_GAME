@@ -23,7 +23,6 @@ void	move_up(t_mlx *args, int dir, int *p, char *str)
 		{
 			ft_putstr(str);
 			write(1, "\n", 1);
-			free(str);
 			args->count++;
 		}
 		if (args->map[p[1] - 1][p[0]] == '0')
@@ -37,6 +36,7 @@ void	move_up(t_mlx *args, int dir, int *p, char *str)
 		else if (args->map[p[1] - 1][p[0]] == 'E' && args->ec->c == 0)
 			exit(0);
 	}
+	free(str);
 	free(p);
 }
 
@@ -52,7 +52,6 @@ void	move_down(t_mlx *args, int dir, int *p, char *str)
 			ft_putstr(str);
 			write(1, "\n", 1);
 			args->count++;
-			free(str);
 		}
 		if (args->map[p[1] + 1][p[0]] == '0')
 			ft_swap(&args->map[p[1] + 1][p[0]], &args->map[p[1]][p[0]]);
@@ -65,6 +64,7 @@ void	move_down(t_mlx *args, int dir, int *p, char *str)
 		else if (args->map[p[1] + 1][p[0]] == 'E' && args->ec->c == 0)
 			exit(0);
 	}
+	free(str);
 	free(p);
 }
 
@@ -80,7 +80,6 @@ void	move_left(t_mlx *args, int dir, int *p, char *str)
 			ft_putstr(str);
 			write(1, "\n", 1);
 			args->count++;
-			free(str);
 		}
 		if (args->map[p[1]][p[0] - 1] == '0')
 			ft_swap(&args->map[p[1]][p[0] - 1], &args->map[p[1]][p[0]]);
@@ -93,6 +92,7 @@ void	move_left(t_mlx *args, int dir, int *p, char *str)
 		else if (args->map[p[1]][p[0] - 1] == 'E' && args->ec->c == 0)
 			exit(0);
 	}
+	free(str);
 	free(p);
 }
 
@@ -108,7 +108,6 @@ void	move_right(t_mlx *args, int dir, int *p, char *str)
 			ft_putstr(str);
 			write(1, "\n", 1);
 			args->count++;
-			free(str);
 		}
 		if (args->map[p[1]][p[0] + 1] == '0')
 			ft_swap(&args->map[p[1]][p[0] + 1], &args->map[p[1]][p[0]]);
@@ -121,6 +120,7 @@ void	move_right(t_mlx *args, int dir, int *p, char *str)
 		else if (args->map[p[1]][p[0] + 1] == 'E' && args->ec->c == 0)
 			exit(0);
 	}
+	free(str);
 	free(p);
 }
 
